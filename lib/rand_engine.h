@@ -1,4 +1,5 @@
-#pragma once
+#ifndef RAND_ENGINE_INCLUDE_GUARD
+#define RAND_ENGINE_INCLUDE_GUARD
 
 #include <chrono>
 #include <random>
@@ -18,3 +19,5 @@ public:
         return abs(mt->operator()());
     }
 };
+
+#endif /* RAND_ENGINE_INCLUDE_GUARD */

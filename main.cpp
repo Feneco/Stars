@@ -5,7 +5,7 @@
 int main(int, char**) {
 
     WINDOW* iscr = initscr();
-    if(iscr==nullptr){
+    if(iscr==nullptr) {
         return 1;
     }
     noecho();

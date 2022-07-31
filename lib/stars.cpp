@@ -3,28 +3,25 @@
 
 const std::vector<char> Star::charmap({'.', '+', '*', 'x', 'X', '#'});
 
-Star::Star(Rand_Engine* random) :random(random) {
+Star::Star(Rand_Engine* random, int y, int x) 
+: random(random), y(y), x(x) {
     toggle_shine();
-    index = 0;
 }
 
 void Star::toggle_shine() {
-    int toggle_shine = random->get();
-    if(toggle_shine % 100 < 5){
+    int dice = random->get();
+    if(dice % 100 < 5){
         shining ^= 1;
     }
 }
 
-char Star::get_char() {
+void Star::shine() {
     toggle_shine();
-    if (shining) {
-        return charmap[random->get() % charmap.size()];
+    if(shining){
+        int dice = random->get() % charmap.size();
+        char c = charmap.at(dice);
+        mvprintw(y, x, "%c", c);
     } else {
-        return ' ';
+        mvprintw(y, x, " ");
     }
-}
-
-
-char Black::get_char(){
-    return ' ';
 }

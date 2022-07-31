@@ -1,4 +1,5 @@
-#pragma once
+#ifndef SKY_INCLUDE_GUARD
+#define SKY_INCLUDE_GUARD
 
 #include <vector>
 #include <random>
@@ -11,9 +12,11 @@
 class Sky{
 private:
     int height, width;
-    std::vector<Piece_Of_Sky *> pieces;
+    std::vector<Star*> stars;
     Rand_Engine* random;
 public:
     Sky(Rand_Engine*, int height, int width);
     void tick();
 };
+
+#endif /* SKY_INCLUDE_GUARD */
