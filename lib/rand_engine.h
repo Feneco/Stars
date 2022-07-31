@@ -15,8 +15,8 @@ public:
     ~Rand_Engine(){
         delete mt;
     }
-    int get(){
-        return abs(mt->operator()());
+    int dice(int faces){
+        return abs(mt->operator()()) % faces ;
     }
 };
 

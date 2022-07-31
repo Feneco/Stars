@@ -1,1 +1,1 @@
-add_library(skies stars.cpp sky.cpp pieceofsky.cpp rand_engine.cpp)
+add_library(skies stars.cpp sky.cpp pieceofsky.cpp rand_engine.cpp cluster.cpp)

@@ -7,7 +7,7 @@
 #include "rand_engine.h"
 
 
-class Star : public Piece_Of_Sky{
+class Star : public Piece_Of_Sky {
 private:
     bool shining;
     int y, x;

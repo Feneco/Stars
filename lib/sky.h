@@ -7,12 +7,13 @@
 #include "rand_engine.h"
 #include "pieceofsky.h"
 #include "stars.h"
+#include "cluster.h"
 
 
 class Sky{
 private:
     int height, width;
-    std::vector<Star*> stars;
+    std::vector<Piece_Of_Sky*> stars;
     Rand_Engine* random;
 public:
     Sky(Rand_Engine*, int height, int width);

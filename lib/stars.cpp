@@ -9,8 +9,7 @@ Star::Star(Rand_Engine* random, int y, int x)
 }
 
 void Star::toggle_shine() {
-    int dice = random->get();
-    if(dice % 100 < 5){
+    if(random->dice(100) < 5){
         shining ^= 1;
     }
 }
@@ -18,7 +17,7 @@ void Star::toggle_shine() {
 void Star::shine() {
     toggle_shine();
     if(shining){
-        int dice = random->get() % charmap.size();
+        int dice = random->dice(charmap.size());
         char c = charmap.at(dice);
         mvprintw(y, x, "%c", c);
     } else {
