@@ -5,6 +5,7 @@
 #include <vector>
 #include "pieceofsky.h"
 #include "rand_engine.h"
+#include "utilities.h"
 
 
 class Cluster : public Piece_Of_Sky {
@@ -16,7 +17,6 @@ private:
     std::vector<int> star_power;
     Rand_Engine* random;
     float gaussianKernel(int y, int x);
-    int clamp(int x, int min, int max);
 public:
     Cluster(Rand_Engine*, int y, int x);
     void shine();

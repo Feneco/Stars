@@ -5,11 +5,13 @@
 #include <vector>
 #include "pieceofsky.h"
 #include "rand_engine.h"
+#include "utilities.h"
 
 
 class Star : public Piece_Of_Sky {
 private:
     bool shining;
+    int brightness;
     int y, x;
     static const std::vector<char> charmap;
     void toggle_shine();
