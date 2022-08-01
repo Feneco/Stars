@@ -11,6 +11,7 @@ Star::Star(Rand_Engine* random, int y, int x)
 
 void Star::toggle_shine() {
     if(random->dice(100) < 5){
+        brightness = 0;
         shining ^= 1;
     }
 }

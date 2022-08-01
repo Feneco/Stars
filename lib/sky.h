@@ -12,12 +12,14 @@
 
 class Sky{
 private:
+    Rand_Engine* random;
     int height, width;
     std::vector<Piece_Of_Sky*> stars;
-    Rand_Engine* random;
+
 public:
     Sky(Rand_Engine*, int height, int width);
     void tick();
+    
 };
 
 #endif /* SKY_INCLUDE_GUARD */
