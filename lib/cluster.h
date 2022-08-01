@@ -1,7 +1,7 @@
 #ifndef CLUSTER_INCLUDE_GUARD
 #define CLUSTER_INCLUDE_GUARD
 
-#include <curses.h>
+#include <ncurses.h>
 #include <vector>
 #include "pieceofsky.h"
 #include "rand_engine.h"
@@ -13,10 +13,11 @@ private:
     int radius;
     int y, x;
     static const std::vector<char> charmap;
-    static const float gamma;
     std::vector<int> star_power;
     Rand_Engine* random;
+    float gamma;
     float gaussianKernel(int y, int x);
+    int convert_xy_to_i(int y, int x);
 public:
     Cluster(Rand_Engine*, int y, int x);
     void shine();

@@ -1,7 +1,7 @@
 #ifndef STARS_INCLUDE_GUARD
 #define STARS_INCLUDE_GUARD
 
-#include <curses.h>
+#include <ncurses.h>
 #include <vector>
 #include "pieceofsky.h"
 #include "rand_engine.h"

@@ -24,6 +24,6 @@ void Star::shine() {
         char c = charmap.at(brightness);
         mvprintw(y, x, "%c", c);
     } else {
-        mvprintw(y, x, " ");
+        mvprintw(y, x, ".");
     }
 }

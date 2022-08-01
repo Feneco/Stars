@@ -3,15 +3,17 @@ project(Stars VERSION 0.1.0)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Curses
+# Add libraries
 find_package(Curses REQUIRED)
 include_directories(${CURSES_INCLUDE_DIR})
-# Stars lib
 add_subdirectory(lib)
 
 add_executable(Stars main.cpp)
 
-# Link Curses
-target_link_libraries(Stars ${CURSES_LIBRARIES})
-# Link Stars
-target_link_libraries(Stars skies)
+# Link libraries
+target_link_libraries(Stars ${CURSES_LIBRARIES} skies)
+target_include_directories(Stars PUBLIC
+                          "${PROJECT_BINARY_DIR}"
+                          "${PROJECT_SOURCE_DIR}/lib"
+                          )
+                          
